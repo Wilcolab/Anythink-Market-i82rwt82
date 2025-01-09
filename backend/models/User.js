@@ -33,7 +33,7 @@ var UserSchema = new mongoose.Schema(
     following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     hash: String,
     salt: String,
-    isVerified:{
+    isVerified: {
       type: Boolean,
       default: false
     }
@@ -79,7 +79,8 @@ UserSchema.methods.toAuthJSON = function() {
     token: this.generateJWT(),
     bio: this.bio,
     image: this.image,
-    role: this.role
+    role: this.role,
+    isVerified: this.isVerified
   };
 };
 
