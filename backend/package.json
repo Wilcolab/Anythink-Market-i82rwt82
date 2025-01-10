@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "engines": {
-    "node": "^16"
+    "node": "16"
   },
   "scripts": {
     "start": "node ./app.js",
@@ -13,7 +13,7 @@
     "stop": "lsof -ti :3000 | xargs kill"
   },
   "dependencies": {
-    "axios": "^0.21.1", 
+    "axios": "^0.25.0",
     "body-parser": "1.15.0",
     "cors": "2.7.1",
     "dotenv": "^8.2.0",
@@ -28,7 +28,7 @@
     "methods": "1.1.2",
     "mongod": "^2.0.0",
     "mongoose": "5.12.5",
-    "mongoose-unique-validator": "^2.0.3",
+    "mongoose-unique-validator": "^3.0.0",
     "morgan": "1.7.0",
     "passport": "0.3.2",
     "passport-local": "1.0.0",
@@ -37,7 +37,7 @@
     "underscore": "1.8.3"
   },
   "devDependencies": {
-    "newman": "^5.2.2",
-    "nodemon": "^2.0.7"
+    "newman": "^3.8.2",
+    "nodemon": "^1.11.0"
   }
 }
