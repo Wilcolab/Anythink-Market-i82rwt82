@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import agent from "../agent";
 import { connect } from "react-redux";
+import verifiedSeller from "../imgs/verified_seller.svg";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
 
 const mapDispatchToProps = (dispatch) => ({
@@ -46,14 +47,19 @@ const ItemPreview = (props) => {
           <h3 className="card-title">{item.title}</h3>
           <p className="card-text crop-text-3">{item.description}</p>
         </Link>
-        <div className="d-flex flex-row align-items-center pt-2 item-footer">
-          <Link to={`/@${item.seller.username}`} className="flex-grow-1">
-            <img
-              src={item.seller.image}
-              alt={item.seller.username}
-              className="user-pic rounded-circle pr-1"
-            />
-          </Link>
+        <div className="d-flex flex-row flex-space-between align-items-center pt-2 item-footer">
+            <Link to={`/@${item.seller.username}`} className="d-flex flex-grow-1">
+              <img
+                src={item.seller.image}
+                alt={item.seller.username}
+                className="user-pic rounded-circle pr-1"
+              />
+              {props.item.seller.isVerified ?
+                  <div className="d-flex align-items-center">
+                    <img src={verifiedSeller} className="verifiedImage" alt="asd" />
+                    <span className="text-white">TOP SELLER</span>
+                  </div> : null}
+            </Link>
           <button className="btn btn-outline-secondary" onClick={handleClick}>
             <i className="ion-heart"></i> {item.favoritesCount}
           </button>
